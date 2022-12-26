@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form method="post">
+        <label>
+            Country: 
+            <select asp-for="@Model.CountryProp" asp-items="@Model.Countries"></select>
+        </label>
+        <label>
+            Package price:
+            <input type="number" asp-for="@Model.PriceProp" />
+        </label>
+        <lable>
+            Pakcage weight kg:
+            <input type="number" asp-for="@Model.WeightProp" />
+        </lable>
+        <input type="submit" value="Submit" />
+    </form>
+    <p>Price: @Model.ResultProp</p>
+</div>
